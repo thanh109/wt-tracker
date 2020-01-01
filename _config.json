@@ -1,0 +1,36 @@
+{
+  "servers": [{
+    "server": {
+      "port": 443,
+      "host": "0.0.0.0",
+      "key_file_name": "/etc/letsencrypt/live/example.com/privkey.pem",
+      "cert_file_name": "/etc/letsencrypt/live/example.com/fullchain.pem",
+      "ssl_prefer_low_memory_usage": true
+    },
+    "websockets": {
+      "path": "/*",
+      "maxPayloadLength": 16384,
+      "idleTimeout": 240,
+      "compression": 1
+    }
+  }, {
+    "server": {
+      "port": 80,
+      "host": "0.0.0.0"
+    },
+    "websockets": {
+      "path": "/*",
+      "maxPayloadLength": 16384,
+      "idleTimeout": 240,
+      "compression": 1
+    }
+  }],
+  "tracker": {
+    "maxOffers": 10,
+    "announceInterval": 120
+  },
+  "websocketsAccess": {
+    "allowOrigins": [""],
+    "denyEmptyOrigin": true
+  }
+}
